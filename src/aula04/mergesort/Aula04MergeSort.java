@@ -54,6 +54,28 @@ public class Aula04MergeSort {
     }
     
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         
+        String x[] =  new String[20];
+        int i;
+        
+        for (i = 0; i <= 19; i++) {
+            System.out.println("Digite a " + (i + 1) + "º palavra: ");
+            x[i] = in.next();
+        }
+        
+        merge(x, 0, 19);
+        
+        int imp = 1;
+        
+        System.out.println(" ");
+        System.out.println("Palavras que iniciam com vogais: ");
+        
+        for (i = 0; i <= 19; i++) {
+            if (x[i].toUpperCase().charAt(0) == 'A' || x[i].toUpperCase().charAt(0) == 'E' || x[i].toUpperCase().charAt(0) == 'I' || x[i].toUpperCase().charAt(0) == 'O' || x[i].toUpperCase().charAt(0) == 'U') {
+                System.out.println(imp + "º palavra: " + x[i]);
+                imp++;
+            }
+        }
     }
 }
